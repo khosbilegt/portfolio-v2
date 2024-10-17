@@ -1,4 +1,5 @@
-import HomeContent from "./HomeContent";
-import HomeSidebar from "./HomeSidebar";
+import HomeContent from "./components/HomeContent";
+import HomeSidebar from "./components/HomeSidebar";
+import HomeHero from "./components/HomeHero";
 
-export { HomeContent, HomeSidebar };
+export { HomeContent, HomeSidebar, HomeHero };

@@ -1,5 +1,4 @@
 import { TreeNodeData } from "@mantine/core";
-import HomeHero from "./HomeHero";
 
 const sidebarData: TreeNodeData[] = [
   {
@@ -63,7 +62,7 @@ const sidebarData: TreeNodeData[] = [
 const contentData: any = [
   {
     type: "component",
-    component: <HomeHero />,
+    name: "HomeHero",
   },
 ];
 

@@ -5,6 +5,7 @@ import "./App.css";
 
 const theme = createTheme({
   autoContrast: true,
+  white: "#B4B7C1",
 });
 
 function App() {
