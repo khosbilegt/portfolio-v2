@@ -1,6 +1,6 @@
 import { Flex, Stack } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
-import HomeSidebar from "../features/home/HomeSidebar";
+import { HomeSidebar, HomeContent } from "../features/home";
 import Navbar from "../components/Navbar";
 import useWindowDimensions from "../hooks/useWindowDimensions";
 
@@ -35,6 +35,7 @@ function HomeLayout() {
           isSiderOpen={isSiderOpen}
           closeSider={closeSider}
         />
+        <HomeContent />
       </Flex>
     </Stack>
   );

@@ -1,6 +1,7 @@
 import { TreeNodeData } from "@mantine/core";
+import HomeHero from "./HomeHero";
 
-export const sidebarData: TreeNodeData[] = [
+const sidebarData: TreeNodeData[] = [
   {
     label: "About me",
     value: "about",
@@ -58,3 +59,12 @@ export const sidebarData: TreeNodeData[] = [
     value: "contact",
   },
 ];
+
+const contentData: any = [
+  {
+    type: "component",
+    component: <HomeHero />,
+  },
+];
+
+export { sidebarData, contentData };

@@ -1,6 +1,6 @@
 import { Button, Drawer, Flex, Group, Tree, useTree } from "@mantine/core";
 import { IconChevronDown } from "@tabler/icons-react";
-import { sidebarData } from "./sidebarData";
+import { sidebarData } from "./homeData";
 import { useState } from "react";
 
 function HomeSidebar({
