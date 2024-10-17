@@ -1,9 +1,17 @@
-import { Button, Flex, Group, Tree, useTree } from "@mantine/core";
+import { Button, Drawer, Flex, Group, Tree, useTree } from "@mantine/core";
 import { IconChevronDown } from "@tabler/icons-react";
 import { sidebarData } from "./sidebarData";
 import { useState } from "react";
 
-function HomeSidebar() {
+function HomeSidebar({
+  isHamburgRequired,
+  isSiderOpen,
+  closeSider,
+}: {
+  isHamburgRequired: boolean;
+  isSiderOpen: boolean;
+  closeSider: any;
+}) {
   const [hoveredItem, setHoveredItem] = useState("");
   const tree = useTree();
 
@@ -11,22 +19,19 @@ function HomeSidebar() {
     if (node?.children?.length > 0) {
       if (node?.children[0].children?.length > 0) {
         tree.select(node?.children[0].children[0].value);
+        closeSider();
       } else {
         tree.select(node?.children[0].value);
+        closeSider();
       }
     } else {
       tree.select(node?.value);
+      closeSider();
     }
   };
 
-  return (
-    <Flex
-      style={{
-        width: "30%",
-        maxWidth: "400px",
-        minWidth: "300px",
-      }}
-    >
+  const renderTree = () => {
+    return (
       <Tree
         style={{
           width: "100%",
@@ -83,6 +88,46 @@ function HomeSidebar() {
           </Group>
         )}
       />
+    );
+  };
+
+  if (isHamburgRequired) {
+    return (
+      <Drawer
+        title="Navigation"
+        opened={isSiderOpen}
+        onClose={closeSider}
+        styles={{
+          title: {
+            color: "#B4B7C1",
+          },
+          header: {
+            background: "#1E2129",
+          },
+          overlay: {
+            background: "rgba(0, 0, 0, 0.5)",
+          },
+          body: {
+            background: "#1E2129",
+            padding: "20px",
+            height: "100%",
+          },
+        }}
+      >
+        {renderTree()}
+      </Drawer>
+    );
+  }
+
+  return (
+    <Flex
+      style={{
+        width: "30%",
+        maxWidth: "400px",
+        minWidth: "300px",
+      }}
+    >
+      {renderTree()}
     </Flex>
   );
 }

@@ -1,8 +1,9 @@
-import { Card, Flex, Image, Text, TextInput } from "@mantine/core";
+import { Button, Card, Flex, Image, TextInput } from "@mantine/core";
 import {
   IconBrandGithub,
   IconBrandInstagram,
   IconBrandLinkedin,
+  IconMenu2,
   IconSearch,
 } from "@tabler/icons-react";
 import { useState } from "react";
@@ -12,18 +13,29 @@ const socialLinks = [
   {
     name: "Github",
     icon: <IconBrandGithub />,
+    link: "https://github.com/khosbilegt",
   },
   {
     name: "Instagram",
     icon: <IconBrandInstagram />,
+    link: "https://www.instagram.com/xocoono.2/",
   },
   {
     name: "LinkedIn",
     icon: <IconBrandLinkedin />,
+    link: "https://www.linkedin.com/in/khosbilegt-bilegsaikhan-82929424b/",
   },
 ];
 
-function Navbar() {
+function Navbar({
+  isHamburgRequired,
+  isSiderOpen,
+  setSiderOpen,
+}: {
+  isHamburgRequired: boolean;
+  isSiderOpen: boolean;
+  setSiderOpen: any;
+}) {
   const [isSearchHovering, setSearchHovering] = useState(false);
   const [selectedIcon, setSelectedIcon] = useState(-1);
 
@@ -39,7 +51,17 @@ function Navbar() {
       }}
     >
       <Flex align={"center"} gap={10} style={{ color: "#fff" }}>
-        <Image src={Logo} style={{ height: "30px" }} />
+        {isHamburgRequired ? (
+          <Button
+            style={{ background: "transparent" }}
+            onClick={() => setSiderOpen(!isSiderOpen)}
+          >
+            <IconMenu2 />
+          </Button>
+        ) : (
+          <Image src={Logo} style={{ height: "30px" }} />
+        )}
+
         <TextInput
           onMouseEnter={() => setSearchHovering(true)}
           onMouseLeave={() => setSearchHovering(false)}
@@ -70,6 +92,7 @@ function Navbar() {
               }`,
               color: selectedIcon === index ? "#C6CBE9" : "#fff",
             }}
+            onClick={() => window.open(link.link, "_blank")}
           >
             {link.icon}
           </Card>
