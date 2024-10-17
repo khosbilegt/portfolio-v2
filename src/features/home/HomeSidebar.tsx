@@ -1,8 +1,10 @@
 import { Button, Flex, Group, Tree, useTree } from "@mantine/core";
 import { IconChevronDown } from "@tabler/icons-react";
 import { sidebarData } from "./sidebarData";
+import { useState } from "react";
 
 function HomeSidebar() {
+  const [hoveredItem, setHoveredItem] = useState("");
   const tree = useTree();
 
   const setSelected = (node: any) => {
@@ -47,10 +49,19 @@ function HomeSidebar() {
             }}
           >
             <Button
+              onMouseEnter={() => setHoveredItem(node?.value)}
+              onMouseLeave={() => setHoveredItem("")}
               style={{
                 width: "100%",
                 background: "transparent",
-                color: selected ? "#4F67F0" : "#B4B7C1",
+                fontFamily: "Roboto, sans-serif",
+                fontWeight: selected ? "500" : "400",
+                color:
+                  hoveredItem === node?.value
+                    ? "#4F67F0"
+                    : selected
+                    ? "#4871BC"
+                    : "#B4B7C1",
               }}
               justify="space-between"
               onClick={() => setSelected(node)}
