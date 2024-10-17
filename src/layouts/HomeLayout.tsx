@@ -1,19 +1,28 @@
-import { Flex } from "@mantine/core";
+import { Flex, Stack } from "@mantine/core";
 import HomeSidebar from "../features/home/HomeSidebar";
+import Navbar from "../components/Navbar";
 
 function HomeLayout() {
   return (
-    <Flex
+    <Stack
       style={{
         width: "100%",
         height: "100%",
         minWidth: "100vw",
         minHeight: "100vh",
-        background: "#f5faf6",
+        background: "#1E2129",
       }}
     >
-      <HomeSidebar />
-    </Flex>
+      <Navbar />
+      <Flex
+        style={{
+          width: "100%",
+          height: "100%",
+        }}
+      >
+        <HomeSidebar />
+      </Flex>
+    </Stack>
   );
 }
 
