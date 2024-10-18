@@ -1,8 +1,8 @@
-import { Avatar, Button, Flex, useMantineColorScheme } from "@mantine/core";
+import { Button, Flex, useMantineColorScheme } from "@mantine/core";
 import { IconMoonFilled, IconSunFilled } from "@tabler/icons-react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-import { Profile } from "../assets/images";
+import useWindowDimensions from "../hooks/useWindowDimensions";
 
 const links = [
   {
@@ -29,9 +29,14 @@ const links = [
 
 function Navbar() {
   const navigate = useNavigate();
+  const { width } = useWindowDimensions();
   const { colorScheme, setColorScheme } = useMantineColorScheme({
     keepTransitions: true,
   });
+
+  if (width < 596) {
+    return <p></p>;
+  }
 
   return (
     <Flex
@@ -39,7 +44,7 @@ function Navbar() {
       align={"center"}
       justify={"space-between"}
     >
-      <Avatar src={Profile} alt="Profile" radius={"xl"} />
+      <p></p>
       <Flex>
         {links.map((link, index) => (
           <Button

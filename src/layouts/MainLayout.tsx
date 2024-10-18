@@ -1,7 +1,7 @@
-import { Stack } from "@mantine/core";
+import { Flex, Stack } from "@mantine/core";
 import { Navbar } from "../components";
 
-function MainLayout() {
+function MainLayout({ children }: { children: React.ReactNode }) {
   return (
     <Stack
       style={{
@@ -13,6 +13,16 @@ function MainLayout() {
       }}
     >
       <Navbar />
+      <Flex
+        style={{
+          padding: "15px 25px",
+          width: "100%",
+          minWidth: "100vw",
+          height: "100%",
+        }}
+      >
+        {children}
+      </Flex>
     </Stack>
   );
 }
