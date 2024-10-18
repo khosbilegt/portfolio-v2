@@ -6,6 +6,7 @@ import {
   Stack,
   Text,
   Tooltip,
+  useMantineColorScheme,
 } from "@mantine/core";
 import { Profile } from "../../../assets/images";
 
@@ -22,7 +23,13 @@ const hiringMethods = [
   },
 ];
 
+const heroIntro = "Hi, I am Khosoo";
+const heroText =
+  "I research obscure technologies and provide full-stack solutions based on them.";
+
 function HomeHero() {
+  const { colorScheme } = useMantineColorScheme();
+
   return (
     <Stack
       justify="center"
@@ -30,21 +37,40 @@ function HomeHero() {
       style={{ width: "100%", height: "600px" }}
     >
       <Avatar src={Profile} alt="Profile" size={"xl"} />
-      <Text>Hi, I am Khosoo</Text>
-      <Text
-        style={{
-          minWidth: "300px",
-          width: "40%",
-          textAlign: "center",
-          fontSize: "2rem",
-          background: "-webkit-linear-gradient(left, #fff, #8c8c8c)",
-          WebkitBackgroundClip: "text",
-          WebkitTextFillColor: "transparent",
-        }}
-      >
-        I research obscure programs and provide full-stack solutions based on
-        them.
+      <Text size="lg" c={"dimmed"}>
+        {heroIntro}
       </Text>
+      {colorScheme === "dark" && (
+        <Text
+          style={{
+            minWidth: "300px",
+            width: "40%",
+            textAlign: "center",
+            fontSize: "2rem",
+            background: "-webkit-linear-gradient(left, #fff, #8c8c8c)",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+          }}
+        >
+          {heroText}
+        </Text>
+      )}
+      {colorScheme === "light" && (
+        <Text
+          style={{
+            minWidth: "300px",
+            width: "40%",
+            textAlign: "center",
+            fontSize: "2rem",
+            background: "-webkit-linear-gradient(left, #000, #8c8c8c)",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+          }}
+        >
+          {heroText}
+        </Text>
+      )}
+
       <Flex gap={10}>
         <Popover>
           <Popover.Target>

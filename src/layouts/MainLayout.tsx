@@ -9,6 +9,7 @@ function MainLayout({ children }: { children: React.ReactNode }) {
         height: "100%",
         minWidth: "100vw",
         minHeight: "100vh",
+        maxWidth: "100vw",
         transition: "background-color 400ms",
       }}
     >
