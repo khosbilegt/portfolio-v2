@@ -7,7 +7,7 @@ import {
   Tooltip,
   useMantineColorScheme,
 } from "@mantine/core";
-import { Profile } from "../../../assets/images";
+import { AvatarOutline, Profile } from "../../../assets/images";
 import "./Avatar.css";
 
 const hiringMethods = [
@@ -39,7 +39,7 @@ function HomeHero() {
       <div className="avatar avatar-x-large">
         <img src={Profile} alt="Usuário" className="avatar-image" />
         <img
-          src="https://i.imgur.com/0aDdQyR.png"
+          src={AvatarOutline}
           alt="Moldura"
           className="avatar-frame anim-spin"
         />
