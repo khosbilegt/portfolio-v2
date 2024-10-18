@@ -1,5 +1,6 @@
 import { Flex, Stack } from "@mantine/core";
 import { Navbar } from "../components";
+import Footer from "../components/Footer";
 
 function MainLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -19,11 +20,11 @@ function MainLayout({ children }: { children: React.ReactNode }) {
           padding: "15px 25px",
           width: "100%",
           minWidth: "100vw",
-          height: "100%",
         }}
       >
         {children}
       </Flex>
+      <Footer />
     </Stack>
   );
 }

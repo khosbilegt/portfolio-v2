@@ -1,3 +1,4 @@
 import Navbar from "./Navbar";
+import NotFound from "./NotFound";
 
-export { Navbar };
+export { Navbar, NotFound };

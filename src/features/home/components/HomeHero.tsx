@@ -47,36 +47,22 @@ function HomeHero() {
       <Text size="lg" c={"dimmed"} style={{ marginTop: "15px" }}>
         {heroIntro}
       </Text>
-      {colorScheme === "dark" && (
-        <Text
-          style={{
-            minWidth: "300px",
-            width: "40%",
-            textAlign: "center",
-            fontSize: "2rem",
-            background: "-webkit-linear-gradient(left, #fff, #8c8c8c)",
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
-          }}
-        >
-          {heroText}
-        </Text>
-      )}
-      {colorScheme === "light" && (
-        <Text
-          style={{
-            minWidth: "300px",
-            width: "40%",
-            textAlign: "center",
-            fontSize: "2rem",
-            background: "-webkit-linear-gradient(left, #000, #8c8c8c)",
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
-          }}
-        >
-          {heroText}
-        </Text>
-      )}
+      <Text
+        style={{
+          minWidth: "300px",
+          width: "40%",
+          textAlign: "center",
+          fontSize: "2rem",
+        }}
+        variant="gradient"
+        gradient={{
+          from: colorScheme === "dark" ? "#fff" : "#8c8c8c",
+          to: colorScheme === "dark" ? "#8c8c8c" : "#000",
+          deg: 90,
+        }}
+      >
+        {heroText}
+      </Text>
 
       <Flex gap={10}>
         <Popover>

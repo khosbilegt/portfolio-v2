@@ -14,7 +14,7 @@ import { useDisclosure } from "@mantine/hooks";
 const links = [
   {
     label: "Home",
-    href: "/home",
+    href: "/",
   },
   {
     label: "About",
