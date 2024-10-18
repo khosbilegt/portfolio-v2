@@ -7,9 +7,7 @@ function Footer() {
         width: "100%",
         height: "100px",
       }}
-    >
-      <p>Test</p>
-    </Flex>
+    ></Flex>
   );
 }
 

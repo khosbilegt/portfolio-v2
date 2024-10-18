@@ -23,7 +23,6 @@ const hiringMethods = [
   },
 ];
 
-const heroIntro = "Hi, I am Khosoo";
 const heroText =
   "I research obscure technologies and provide full-stack solutions based on them.";
 
@@ -44,11 +43,9 @@ function HomeHero() {
           className="avatar-frame anim-spin"
         />
       </div>
-      <Text size="lg" c={"dimmed"} style={{ marginTop: "15px" }}>
-        {heroIntro}
-      </Text>
       <Text
         style={{
+          marginTop: "15px",
           minWidth: "300px",
           width: "40%",
           textAlign: "center",

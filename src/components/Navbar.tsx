@@ -5,7 +5,7 @@ import {
   Stack,
   useMantineColorScheme,
 } from "@mantine/core";
-import { IconMoonFilled, IconSunFilled } from "@tabler/icons-react";
+import { IconMenu2, IconMoonFilled, IconSunFilled } from "@tabler/icons-react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import useWindowDimensions from "../hooks/useWindowDimensions";
@@ -45,7 +45,9 @@ function Navbar() {
   if (width < 596) {
     return (
       <Flex style={{ padding: "15px" }}>
-        <Button onClick={open}>Test</Button>
+        <Button onClick={open}>
+          <IconMenu2 />
+        </Button>
         <Drawer
           title="Menu"
           onClose={close}
@@ -100,9 +102,10 @@ function Navbar() {
     <Flex
       style={{
         height: "50px",
-        width: "100%",
+        width: "95%",
         padding: "15px",
         maxWidth: "100vw",
+        alignSelf: "center",
       }}
       align={"center"}
       justify={"space-between"}
