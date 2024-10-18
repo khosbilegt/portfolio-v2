@@ -1,13 +1,11 @@
 import { Flex, Stack } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
-import { HomeSidebar, HomeContent } from "../features/home";
-import Navbar from "../components/Navbar";
 import useWindowDimensions from "../hooks/useWindowDimensions";
 
 function HomeLayout() {
-  const { width } = useWindowDimensions();
-  const [isSiderOpen, { open: openSider, close: closeSider }] =
-    useDisclosure(false);
+  // const { width } = useWindowDimensions();
+  // const [isSiderOpen, { open: openSider, close: closeSider }] =
+  // useDisclosure(false);
 
   return (
     <Stack
@@ -19,24 +17,12 @@ function HomeLayout() {
         background: "#1E2129",
       }}
     >
-      <Navbar
-        isHamburgRequired={width < 1024}
-        isSiderOpen={isSiderOpen}
-        setSiderOpen={isSiderOpen ? closeSider : openSider}
-      />
       <Flex
         style={{
           width: "100%",
           height: "100%",
         }}
-      >
-        <HomeSidebar
-          isHamburgRequired={width < 1024}
-          isSiderOpen={isSiderOpen}
-          closeSider={closeSider}
-        />
-        <HomeContent />
-      </Flex>
+      ></Flex>
     </Stack>
   );
 }
