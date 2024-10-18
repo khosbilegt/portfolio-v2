@@ -1,5 +1,4 @@
 import {
-  Avatar,
   Button,
   Flex,
   Popover,
@@ -9,6 +8,7 @@ import {
   useMantineColorScheme,
 } from "@mantine/core";
 import { Profile } from "../../../assets/images";
+import "./Avatar.css";
 
 const hiringMethods = [
   {
@@ -36,8 +36,15 @@ function HomeHero() {
       align="center"
       style={{ width: "100%", height: "600px" }}
     >
-      <Avatar src={Profile} alt="Profile" size={"xl"} />
-      <Text size="lg" c={"dimmed"}>
+      <div className="avatar avatar-x-large">
+        <img src={Profile} alt="Usuário" className="avatar-image" />
+        <img
+          src="https://i.imgur.com/0aDdQyR.png"
+          alt="Moldura"
+          className="avatar-frame anim-spin"
+        />
+      </div>
+      <Text size="lg" c={"dimmed"} style={{ marginTop: "15px" }}>
         {heroIntro}
       </Text>
       {colorScheme === "dark" && (
