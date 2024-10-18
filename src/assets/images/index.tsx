@@ -1,3 +1,4 @@
 import Logo from "./favicon.ico";
+import Profile from "./profile.png";
 
-export { Logo };
+export { Logo, Profile };

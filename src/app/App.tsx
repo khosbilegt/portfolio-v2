@@ -5,12 +5,13 @@ import "./App.css";
 
 const theme = createTheme({
   autoContrast: true,
-  white: "#B4B7C1",
+  white: "#fff",
+  black: "#23252F",
 });
 
 function App() {
   return (
-    <MantineProvider theme={theme}>
+    <MantineProvider theme={theme} defaultColorScheme="auto" withGlobalClasses>
       <Router />
     </MantineProvider>
   );
