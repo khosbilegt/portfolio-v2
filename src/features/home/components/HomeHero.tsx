@@ -63,7 +63,6 @@ function HomeHero() {
       >
         {heroText}
       </Text>
-
       <Flex gap={10}>
         <Popover>
           <Popover.Target>

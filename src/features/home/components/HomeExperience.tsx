@@ -11,9 +11,11 @@ import {
 import useWindowDimensions from "../../../hooks/useWindowDimensions";
 import { experienceData } from "../data";
 import { projectData } from "../../project/data";
+import { useNavigate } from "react-router-dom";
 import ProjectCard from "../../project/components/ProjectCard";
 
 function HomeExperience() {
+  const navigate = useNavigate();
   const { width } = useWindowDimensions();
 
   return (
@@ -66,7 +68,18 @@ function HomeExperience() {
               <Text>{experience?.blurb}</Text>
               <Flex gap={5} wrap={"wrap"} style={{ marginTop: "10px" }}>
                 {experience?.skills?.map((skill, index) => (
-                  <Button key={index} size="xs" variant="outline">
+                  <Button
+                    key={index}
+                    size="xs"
+                    variant="outline"
+                    onClick={() =>
+                      navigate(
+                        `/projects?skills=${skill
+                          .toLocaleLowerCase()
+                          .replace(" ", "_")}`
+                      )
+                    }
+                  >
                     {skill}
                   </Button>
                 ))}
