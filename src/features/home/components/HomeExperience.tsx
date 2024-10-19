@@ -12,7 +12,7 @@ import useWindowDimensions from "../../../hooks/useWindowDimensions";
 import { experienceData } from "../data";
 import { projectData } from "../../project/data";
 import { useNavigate } from "react-router-dom";
-import ProjectCard from "../../project/components/ProjectCard";
+import { ProjectCard } from "../../project/components";
 
 function HomeExperience() {
   const navigate = useNavigate();

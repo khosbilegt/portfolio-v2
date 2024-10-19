@@ -3,14 +3,16 @@ import {
   Button,
   Drawer,
   Flex,
+  Image,
   Stack,
   useMantineColorScheme,
 } from "@mantine/core";
 import { IconMoonFilled, IconSunFilled } from "@tabler/icons-react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-import useWindowDimensions from "../hooks/useWindowDimensions";
 import { useDisclosure } from "@mantine/hooks";
+import { Favicon } from "../assets/images";
+import useWindowDimensions from "../hooks/useWindowDimensions";
 
 const links = [
   {
@@ -43,7 +45,7 @@ function Navbar() {
     keepTransitions: true,
   });
 
-  if (width < 596) {
+  if (width < 768) {
     return (
       <Flex style={{ padding: "15px" }}>
         <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size={"sm"} />
@@ -109,32 +111,42 @@ function Navbar() {
       align={"center"}
       justify={"space-between"}
     >
-      <p></p>
-      <Flex>
+      <Button variant="subtle" onClick={() => navigate("/")}>
+        <Image
+          src={Favicon}
+          style={{
+            filter: colorScheme === "dark" ? "invert(30%)" : "",
+            zIndex: width > 768 ? 1 : 0,
+            opacity: width > 768 ? 1 : 0,
+          }}
+        />
+      </Button>
+      <Flex align={"center"}>
         {links.map((link, index) => (
           <Button
             key={index}
             onClick={() => navigate(link.href)}
             variant="subtle"
+            size="lg"
           >
             {link.label}
           </Button>
         ))}
-      </Flex>
-      <motion.div
-        initial={{ scale: 0 }}
-        animate={{ scale: 1 }}
-        transition={{ type: "spring" }}
-      >
-        <Button
-          onClick={() =>
-            setColorScheme(colorScheme === "dark" ? "light" : "dark")
-          }
-          variant="outline"
+        <motion.div
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{ type: "spring" }}
         >
-          {colorScheme === "dark" ? <IconSunFilled /> : <IconMoonFilled />}
-        </Button>
-      </motion.div>
+          <Button
+            onClick={() =>
+              setColorScheme(colorScheme === "dark" ? "light" : "dark")
+            }
+            variant="outline"
+          >
+            {colorScheme === "dark" ? <IconSunFilled /> : <IconMoonFilled />}
+          </Button>
+        </motion.div>
+      </Flex>
     </Flex>
   );
 }

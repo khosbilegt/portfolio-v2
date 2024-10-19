@@ -38,6 +38,7 @@ const projectData = [
     id: "jooq_asterisk_generator",
     name: "JOOQ Asterisk Generator",
     image: "https://khosbilegt.dev/file/jooq_logo.png",
+    imageInverted: true,
     description:
       "Custom JOOQ Generator Strategy to properly use JOOQ with Asterisk PBX's database structure that conflicts with the Default Generator Strategy.",
   },

@@ -1,9 +1,10 @@
-import { Flex, Image, Stack, Text } from "@mantine/core";
+import { Flex, Image, Stack, Text, useMantineColorScheme } from "@mantine/core";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 function ProjectCard({ project }: { project: any }) {
   const navigate = useNavigate();
+  const { colorScheme } = useMantineColorScheme();
   const [isHovered, setHovered] = useState(false);
 
   return (
@@ -22,10 +23,21 @@ function ProjectCard({ project }: { project: any }) {
           transform: isHovered ? "translate(0, -5px)" : "",
         }}
       >
-        <Image src={project?.image} fit="cover" />
+        <Image
+          src={project?.image}
+          fit="cover"
+          style={{
+            filter:
+              project?.imageInverted && colorScheme === "light"
+                ? "invert(100%)"
+                : "",
+          }}
+        />
       </Flex>
 
-      <Text td={isHovered ? "underline" : ""}>{project?.name}</Text>
+      <Text td={isHovered ? "underline" : ""} size="lg" fw={500}>
+        {project?.name}
+      </Text>
       <Text style={{ width: "250px" }}>{project?.description}</Text>
     </Stack>
   );
