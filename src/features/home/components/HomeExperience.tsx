@@ -30,7 +30,7 @@ function HomeExperience() {
       <Timeline
         active={2}
         bulletSize={25}
-        style={{ width: width < 596 ? "80%" : "50%", minWidth: "300px" }}
+        style={{ width: width < 1024 ? "80%" : "60%", minWidth: "300px" }}
       >
         {experienceData?.map((experience, index) => {
           return (
@@ -71,7 +71,12 @@ function HomeExperience() {
                   </Button>
                 ))}
               </Flex>
-              <Flex style={{ marginTop: "15px" }}>
+              <Flex
+                style={{ marginTop: "15px" }}
+                wrap={"wrap"}
+                gap={15}
+                justify={width < 1024 ? "center" : "start"}
+              >
                 {experience?.projects?.map((projectId, index) => {
                   let projectInfoFinal = {};
                   projectData?.map((projectInfo) => {

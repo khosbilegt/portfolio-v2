@@ -12,7 +12,7 @@ const experienceData = [
     icon: <IconDeviceGamepad2 />,
     date: "Jun 2022 - Nov 2022",
     skills: ["UE4", "C++", "Game Dev", "Algorithm"],
-    projects: ["guyuk"],
+    projects: ["guyuk", "guyuk", "guyuk"],
     blurb:
       "My professional career began with an internship at Digital Solutions LLC, a start-up based on Web3.0 (Metaverse & VR), where I worked as a game developer. I was responsible for developing custom features that Unreal Engine 4 didn't support natively in C++.",
   },

@@ -4,9 +4,9 @@ const projectData = [
   {
     id: "guyuk",
     name: "Guyuk Metaverse",
-    date: "May 2021",
     image: GuyukProject,
-    description: "A simple and fast static site generator",
+    description:
+      "Guyuk is a social network based on the virtual world. It provides equal opportunity to all users to communicate, learn, travel,",
   },
 ];
 

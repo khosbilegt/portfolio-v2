@@ -1,11 +1,12 @@
 import {
+  Burger,
   Button,
   Drawer,
   Flex,
   Stack,
   useMantineColorScheme,
 } from "@mantine/core";
-import { IconMenu2, IconMoonFilled, IconSunFilled } from "@tabler/icons-react";
+import { IconMoonFilled, IconSunFilled } from "@tabler/icons-react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import useWindowDimensions from "../hooks/useWindowDimensions";
@@ -37,7 +38,7 @@ const links = [
 function Navbar() {
   const navigate = useNavigate();
   const { width } = useWindowDimensions();
-  const [opened, { open, close }] = useDisclosure(false);
+  const [opened, { close, toggle }] = useDisclosure(false);
   const { colorScheme, setColorScheme } = useMantineColorScheme({
     keepTransitions: true,
   });
@@ -45,9 +46,7 @@ function Navbar() {
   if (width < 596) {
     return (
       <Flex style={{ padding: "15px" }}>
-        <Button onClick={open}>
-          <IconMenu2 />
-        </Button>
+        <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size={"sm"} />
         <Drawer
           title="Menu"
           onClose={close}
