@@ -30,7 +30,7 @@ function HomeExperience() {
       <Timeline
         active={2}
         bulletSize={25}
-        style={{ width: width < 1024 ? "80%" : "60%", minWidth: "300px" }}
+        style={{ width: width < 1024 ? "80%" : "50%", minWidth: "300px" }}
       >
         {experienceData?.map((experience, index) => {
           return (

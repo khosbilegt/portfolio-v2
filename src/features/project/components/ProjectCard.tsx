@@ -1,4 +1,4 @@
-import { Image, Stack, Text } from "@mantine/core";
+import { Flex, Image, Stack, Text } from "@mantine/core";
 import { useState } from "react";
 
 function ProjectCard({ project }: { project: any }) {
@@ -11,15 +11,16 @@ function ProjectCard({ project }: { project: any }) {
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
-      <Image
-        src={project?.image}
-        fit="contain"
+      <Flex
         style={{
           height: "200px",
           transition: "200ms",
           transform: isHovered ? "translate(0, -5px)" : "",
         }}
-      />
+      >
+        <Image src={project?.image} fit="scale-down" />
+      </Flex>
+
       <Text td={isHovered ? "underline" : ""}>{project?.name}</Text>
       <Text style={{ width: "300px" }}>{project?.description}</Text>
     </Stack>

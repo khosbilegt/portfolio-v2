@@ -12,7 +12,7 @@ const experienceData = [
     icon: <IconDeviceGamepad2 />,
     date: "Jun 2022 - Nov 2022",
     skills: ["UE4", "C++", "Game Dev", "Algorithm"],
-    projects: ["guyuk", "guyuk", "guyuk"],
+    projects: ["guyuk"],
     blurb:
       "My professional career began with an internship at Digital Solutions LLC, a start-up based on Web3.0 (Metaverse & VR), where I worked as a game developer. I was responsible for developing custom features that Unreal Engine 4 didn't support natively in C++.",
   },
@@ -27,6 +27,7 @@ const experienceData = [
       "C++",
       "Game Dev",
       "Vulkan API",
+      "GLSL",
       "Algorithm",
       "VR",
       "AR",
@@ -34,6 +35,7 @@ const experienceData = [
       "Spring Boot",
       "React",
     ],
+    projects: ["physics_simulator", "classroom", "space_pilot"],
     blurb:
       "During my time at the National University of Mongolia, I worked as a research assistant in the Computer Graphics Research Laboratory, leading a team of 5 students in multiple competitions, leveraging the potential of VR, AR & Motion Controllers.",
   },
