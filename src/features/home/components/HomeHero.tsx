@@ -7,7 +7,6 @@ import {
   Tooltip,
   useMantineColorScheme,
 } from "@mantine/core";
-import { AvatarOutline, Profile } from "../../../assets/images";
 import "./Avatar.css";
 
 const hiringMethods = [
@@ -36,9 +35,13 @@ function HomeHero() {
       style={{ width: "100%", height: "700px" }}
     >
       <div className="avatar avatar-x-large">
-        <img src={Profile} alt="Usuário" className="avatar-image" />
         <img
-          src={AvatarOutline}
+          src={"https://khosbilegt.dev/file/profile.png"}
+          alt="Usuário"
+          className="avatar-image"
+        />
+        <img
+          src={"https://khosbilegt.dev/file/avatar_outline.png"}
           alt="Moldura"
           className="avatar-frame anim-spin"
         />
@@ -70,7 +73,7 @@ function HomeHero() {
             <Text>Please choose a method of contact: </Text>
             <Flex gap={10} style={{ marginTop: "10px" }} justify={"center"}>
               {hiringMethods.map((method, index) => (
-                <Tooltip label={method.tooltip} position="bottom">
+                <Tooltip label={method.tooltip} position="bottom" key={index}>
                   <Button
                     key={index}
                     onClick={() => window.open(method.url, "_blank")}

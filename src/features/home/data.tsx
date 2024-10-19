@@ -63,9 +63,9 @@ const experienceData = [
       "Sysadmin",
     ],
     projects: [
+      "broadband_cdr",
       "customer_validation",
       "jooq_asterisk_generator",
-      "broadband_cdr",
     ],
     blurb:
       "Shortly after my graduation, I was offered the position of Back-End Developer at the leading telecommunication provider in Mongolia and have shortly transitioned to a Full-Stack Developer, taking up tasks that required extensive research and diving into the world of documentation.",
