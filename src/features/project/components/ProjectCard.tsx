@@ -1,7 +1,9 @@
 import { Flex, Image, Stack, Text } from "@mantine/core";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function ProjectCard({ project }: { project: any }) {
+  const navigate = useNavigate();
   const [isHovered, setHovered] = useState(false);
 
   return (
@@ -10,6 +12,7 @@ function ProjectCard({ project }: { project: any }) {
       align={"center"}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
+      onClick={() => navigate(`/projects/${project?.id}`)}
     >
       <Flex
         style={{

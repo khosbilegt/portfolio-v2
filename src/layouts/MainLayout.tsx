@@ -4,7 +4,7 @@ import Footer from "../components/Footer";
 
 function MainLayout({ children }: { children: React.ReactNode }) {
   return (
-    <AppShell>
+    <AppShell header={{ offset: true, height: "50px" }}>
       <AppShell.Header>
         <Navbar />
       </AppShell.Header>

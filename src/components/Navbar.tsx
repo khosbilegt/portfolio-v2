@@ -101,7 +101,7 @@ function Navbar() {
     <Flex
       style={{
         height: "50px",
-        width: "95%",
+        width: "100%",
         padding: "15px",
         maxWidth: "100vw",
         alignSelf: "center",

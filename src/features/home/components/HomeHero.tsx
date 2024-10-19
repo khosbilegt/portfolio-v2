@@ -33,7 +33,7 @@ function HomeHero() {
     <Stack
       justify="center"
       align="center"
-      style={{ width: "100%", height: "600px" }}
+      style={{ width: "100%", height: "700px" }}
     >
       <div className="avatar avatar-x-large">
         <img src={Profile} alt="Usuário" className="avatar-image" />

@@ -6,12 +6,12 @@ import ProjectView from "../features/project/ProjectView";
 
 const router = createBrowserRouter([
   {
-    path: "/",
-    element: <MainLayout children={<HomeView />} />,
-  },
-  {
     path: "/projects",
     element: <MainLayout children={<ProjectView />} />,
+  },
+  {
+    path: "/",
+    element: <MainLayout children={<HomeView />} />,
   },
   {
     path: "*",

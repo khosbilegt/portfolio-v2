@@ -1,8 +1,11 @@
 import {
+  BroadbandProject,
   ClassroomProject,
   GuyukProject,
+  JOOQLogo,
   PhysicsProject,
   SpacePilotProject,
+  ValidationProject,
 } from "../../assets/images";
 
 const projectData = [
@@ -33,6 +36,27 @@ const projectData = [
     image: SpacePilotProject,
     description:
       "A spaceship piloting game with motion controls based on Microsoft Kinect, built in UE4 and C++.",
+  },
+  {
+    id: "customer_validation",
+    name: "Customer Validation Pipeline",
+    image: ValidationProject,
+    description:
+      "Implemented a customer validation pipeline using AWS Face Validation to prevent frauds, used in all branches of Unitel with 20,000+ uses per month.",
+  },
+  {
+    id: "jooq_asterisk_generator",
+    name: "JOOQ Asterisk Generator",
+    image: JOOQLogo,
+    description:
+      "Custom JOOQ Generator Strategy to properly use JOOQ with Asterisk PBX's database structure that conflicts with the Default Generator Strategy.",
+  },
+  {
+    id: "broadband_cdr",
+    name: "Broadband CDR Processor",
+    image: BroadbandProject,
+    description:
+      "Implemented a network usage monitoring service, consuming Radius requests and large files in bulk to accurately calculate the total usage of most households in the country, leveraging Redis.",
   },
 ];
 
