@@ -1,7 +1,6 @@
 import {
   Button,
   Flex,
-  Grid,
   Stack,
   Text,
   Timeline,
@@ -9,43 +8,35 @@ import {
   Tooltip,
   UnstyledButton,
 } from "@mantine/core";
-import useWindowDimensions from "../../../hooks/useWindowDimensions";
 import { experienceData } from "../data";
 import { projectData } from "../../project/data";
 import { useNavigate } from "react-router-dom";
 import { ProjectCard } from "../../project/components";
+import { Carousel } from "@mantine/carousel";
 
 function HomeExperience() {
   const navigate = useNavigate();
-  const { width } = useWindowDimensions();
 
   return (
-    <Stack style={{ width: "100%" }} align="center">
+    <Stack w={"100%"} align="center">
       <Title
-        style={{
-          width: width < 1024 ? "80%" : "60%",
-          textAlign: "start",
-        }}
+        w={{ xs: "80%", sm: "80%", md: "60%", lg: "40%" }}
+        px={50}
+        ta={"start"}
       >
         Experience
       </Title>
       <Timeline
         active={2}
         bulletSize={25}
-        style={{ width: width < 1024 ? "80%" : "60%", minWidth: "300px" }}
+        px={50}
+        w={{ xs: "80%", sm: "80%", md: "60%", lg: "40%" }}
       >
         {experienceData?.map((experience, index) => {
           return (
             <Timeline.Item bullet={experience?.icon} key={index}>
               <Stack align="center">
-                <Text
-                  fw={600}
-                  size="lg"
-                  style={{
-                    width: "100%",
-                    textAlign: "start",
-                  }}
-                >
+                <Text fw={600} size="lg" w={"100%"} ta={"start"}>
                   {experience.title} @{" "}
                   <span>
                     <Tooltip
@@ -57,7 +48,7 @@ function HomeExperience() {
                       position="bottom"
                     >
                       <UnstyledButton
-                        style={{ color: "#1971C2" }}
+                        color="#1971C2"
                         variant="subtle"
                         onClick={() => {
                           if (experience?.companyUrl) {
@@ -70,24 +61,13 @@ function HomeExperience() {
                     </Tooltip>
                   </span>
                 </Text>
-                <Text
-                  style={{
-                    width: "100%",
-                    textAlign: "start",
-                  }}
-                  size="md"
-                >
+                <Text w={"100%"} ta={"start"} size="md">
                   {experience.date}
                 </Text>
-                <Text
-                  style={{
-                    width: "100%",
-                    textAlign: "start",
-                  }}
-                >
+                <Text w={"100%"} ta={"start"}>
                   {experience?.blurb}
                 </Text>
-                <Flex gap={5} wrap={"wrap"} style={{ marginTop: "10px" }}>
+                <Flex gap={5} wrap={"wrap"} mt={"10px"}>
                   {experience?.skills?.map((skill, index) => (
                     <Button
                       key={index}
@@ -105,27 +85,28 @@ function HomeExperience() {
                     </Button>
                   ))}
                 </Flex>
-                <Grid
-                  style={{
-                    marginTop: "15px",
-                    width: width < 596 ? "80%" : "100%",
-                  }}
-                  gutter={"lg"}
-                >
-                  {experience?.projects?.map((projectId, index) => {
-                    let projectInfoFinal = {};
-                    projectData?.map((projectInfo) => {
-                      if (projectInfo?.id === projectId) {
-                        projectInfoFinal = projectInfo;
-                      }
-                    });
-                    return (
-                      <Grid.Col key={index} span={{ sm: 6, md: 4, lg: 3 }}>
-                        <ProjectCard key={index} project={projectInfoFinal} />
-                      </Grid.Col>
-                    );
-                  })}
-                </Grid>
+                {experience?.projects && experience?.projects?.length > 0 && (
+                  <Carousel
+                    w={{ sm: "80%", md: "80%", lg: "60%" }}
+                    height={"400px"}
+                    loop
+                    withIndicators
+                  >
+                    {experience?.projects?.map((projectId, index) => {
+                      let projectInfoFinal = {};
+                      projectData?.map((projectInfo) => {
+                        if (projectInfo?.id === projectId) {
+                          projectInfoFinal = projectInfo;
+                        }
+                      });
+                      return (
+                        <Carousel.Slide key={index}>
+                          <ProjectCard project={projectInfoFinal} />
+                        </Carousel.Slide>
+                      );
+                    })}
+                  </Carousel>
+                )}
               </Stack>
             </Timeline.Item>
           );

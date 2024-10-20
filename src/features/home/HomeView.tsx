@@ -4,7 +4,7 @@ import HomeExperience from "./components/HomeExperience";
 
 function HomeView() {
   return (
-    <Stack style={{ width: "100%" }}>
+    <Stack w={"100%"}>
       <HomeHero />
       <HomeExperience />
     </Stack>

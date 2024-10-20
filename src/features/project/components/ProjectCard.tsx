@@ -16,8 +16,8 @@ function ProjectCard({ project }: { project: any }) {
       onClick={() => navigate(`/projects/${project?.id}`)}
     >
       <Flex
+        h={"200px"}
         style={{
-          height: "200px",
           transition: "200ms",
           transform: isHovered ? "translate(0, -5px)" : "",
         }}

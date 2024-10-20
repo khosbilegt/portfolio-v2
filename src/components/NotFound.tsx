@@ -5,13 +5,9 @@ function NotFound() {
   const navigate = useNavigate();
 
   return (
-    <Stack
-      style={{ width: "100%", height: "80vh" }}
-      justify="center"
-      align="center"
-    >
-      <Text style={{ fontSize: "50px" }}>404</Text>
-      <Text size="xl" style={{ marginBottom: "15px" }}>
+    <Stack w={"100%"} h={"80vh"} justify="center" align="center">
+      <Text size="50px">404</Text>
+      <Text size="xl" mb={"15px"}>
         Page not found
       </Text>
       <Button variant="outline" onClick={() => navigate("/")}>

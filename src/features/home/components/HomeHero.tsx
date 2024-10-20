@@ -29,11 +29,7 @@ function HomeHero() {
   const { colorScheme } = useMantineColorScheme();
 
   return (
-    <Stack
-      justify="center"
-      align="center"
-      style={{ width: "100%", height: "700px" }}
-    >
+    <Stack justify="center" align="center" w={"100%"} h={"700px"}>
       <div className="avatar avatar-x-large">
         <img
           src={"https://khosbilegt.dev/file/profile.png"}
@@ -47,13 +43,11 @@ function HomeHero() {
         />
       </div>
       <Text
-        style={{
-          marginTop: "15px",
-          minWidth: "300px",
-          width: "40%",
-          textAlign: "center",
-          fontSize: "2rem",
-        }}
+        mt={"15px"}
+        miw={"300px"}
+        w={"40%"}
+        ta={"center"}
+        fs={"2rem"}
         variant="gradient"
         gradient={{
           from: colorScheme === "dark" ? "#fff" : "#8c8c8c",
@@ -70,7 +64,7 @@ function HomeHero() {
           </Popover.Target>
           <Popover.Dropdown>
             <Text>Please choose a method of contact: </Text>
-            <Flex gap={10} style={{ marginTop: "10px" }} justify={"center"}>
+            <Flex gap={10} mt={"10px"} justify={"center"}>
               {hiringMethods.map((method, index) => (
                 <Tooltip label={method.tooltip} position="bottom" key={index}>
                   <Button

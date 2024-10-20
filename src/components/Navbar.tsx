@@ -47,7 +47,7 @@ function Navbar() {
 
   if (width < 768) {
     return (
-      <Flex style={{ padding: "15px" }}>
+      <Flex p={"15px"}>
         <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size={"sm"} />
         <Drawer
           title="Menu"
@@ -68,13 +68,13 @@ function Navbar() {
                   navigate(link.href);
                 }}
                 variant="subtle"
-                style={{ padding: "0 15px" }}
+                p={"0 15px"}
               >
                 {link.label}
               </Button>
             ))}
           </Stack>
-          <Flex style={{ width: "100%", marginTop: "15px" }} justify={"end"}>
+          <Flex w={"100%"} mt={"15px"} justify={"end"}>
             <motion.div
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
@@ -101,13 +101,10 @@ function Navbar() {
 
   return (
     <Flex
-      style={{
-        height: "50px",
-        width: "100%",
-        padding: "15px",
-        maxWidth: "100vw",
-        alignSelf: "center",
-      }}
+      h={"50px"}
+      w={"100%"}
+      p={"15px"}
+      maw={"100vw"}
       align={"center"}
       justify={"space-between"}
     >
@@ -127,7 +124,7 @@ function Navbar() {
             key={index}
             onClick={() => navigate(link.href)}
             variant="subtle"
-            size="lg"
+            size="md"
           >
             {link.label}
           </Button>
