@@ -9,7 +9,7 @@ function ProjectCard({ project }: { project: any }) {
 
   return (
     <Stack
-      style={{ width: "250px", height: "400px" }}
+      style={{ width: "100%", height: "100%" }}
       align={"center"}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
@@ -18,7 +18,6 @@ function ProjectCard({ project }: { project: any }) {
       <Flex
         style={{
           height: "200px",
-          width: "250px",
           transition: "200ms",
           transform: isHovered ? "translate(0, -5px)" : "",
         }}
@@ -27,6 +26,8 @@ function ProjectCard({ project }: { project: any }) {
           src={project?.image}
           fit="cover"
           style={{
+            width: "100%",
+            height: "200px",
             filter:
               project?.imageInverted && colorScheme === "light"
                 ? "invert(100%)"
@@ -34,11 +35,10 @@ function ProjectCard({ project }: { project: any }) {
           }}
         />
       </Flex>
-
       <Text td={isHovered ? "underline" : ""} size="lg" fw={500}>
         {project?.name}
       </Text>
-      <Text style={{ width: "250px" }}>{project?.description}</Text>
+      <Text>{project?.description}</Text>
     </Stack>
   );
 }
